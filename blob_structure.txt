@@ -20,8 +20,22 @@ OR OTHER DEALINGS IN THE SOFTWARE.
 
 SPDX-License-Identifier: MIT -->
 
-# Security Policy
-Intel is committed to rapidly addressing security vulnerabilities affecting our customers and providing clear guidance on the solution, impact, severity and mitigation. 
+struct tdx_blob
+{
+	_u16 version;              // Version number
+	_u16 checksum;             // Checksum of the entire blob should be zero
+	_u32 offset_of_module;     // Offset of the module binary intel_tdx_module.bin in bytes
+	_u8  signature[8];         // Must be "TDX-BLOB"
+	_u32 length;               // The length in bytes of the entire blob
+	_u32 reserved0;            // Reserved space
+	_u64 reserved1[509];       // Reserved space
+	_u64 sigstruct[256];       // 2KB sigstruct, intel_tdx_module.so.sigstruct
+	_u64 reserved2[256];       // Reserved space
+	_u64 reserved3[N*512];     // Additional reserved space, 4KB aligned (offset_of_module = 8KB + (N * 4KB). N>=0)
+	_u8  module[];             // intel_tdx_module.bin, 4KB aligned, to the end of the file
+}
 
-## Reporting a Vulnerability
-Please report any security vulnerabilities in this project utilizing the guidelines [here](https://www.intel.com/content/www/us/en/security-center/vulnerability-handling-guidelines.html).
+
+** For the current first release, the <version> field is defined to be 1.0 (0x100).
+** For the current first release, the <N> is equal to zero.
+** All reserved fields must be set to zero.
