@@ -310,9 +310,9 @@ def list_tdx_modules(modules: list[TdxModule]) -> None:
     modules.sort(key=lambda m: tuple(map(int, m.version.split('.'))), reverse=True)
 
     for module in modules:
-        compatibility_status = "[incompatible]" if not is_compatible(module) else ""
         debug_status = "[debug]" if is_debug(module) else ""
-        print(f"{module.version} {compatibility_status}{debug_status}")
+        td_preserving_capable_status = "[TD-Preserving-incapable]" if not is_td_preserving_capable(module) else ""
+        print(f"{module.version} {debug_status}{td_preserving_capable_status}")
 
 def find_newest_tdx_module(modules: list[TdxModule]) -> TdxModule:
     """Find the newest TD-preserving capable Intel TDX module.

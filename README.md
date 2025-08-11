@@ -65,6 +65,10 @@ The `version_select_and_load.py` must work with WIP kernel interfaces to support
      ```
      ./blob_join.sh <path_to_bin> <path_to_sigstruct>
      ```
+   - python `version_select_and_load.py --list` prints a few labels with each TDX module. Following labels are supported:
+        1. Incompatible - the module isn't compatible with the current CPU or SEAMLDR. I.e., the system cannot load the module.
+        2. Debug - the module is a debug version of module.
+        3. TD-Preserving-incapable - the module isn't compatible with the current running TDX module. Generally, this is because either the module has a different major.minor version or its update version is greater than the current module's.
 
 ## Important Notes
 
@@ -77,7 +81,16 @@ The `version_select_and_load.py` must work with WIP kernel interfaces to support
   | 1.5.01                         | 1.5.01                                               | 1.5.00                              |
   | 1.5.05                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
   | 1.5.06                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
+  | 1.5.08                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
+  | 1.5.09                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
+  | 1.5.13                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
+  | 1.5.16                         | 1.5.01                                               | 1.5.00, 2.0.00                      |
+  | 2.0.02                         | 2.0.02                                               | 2.0.00                              |
+  | 2.0.04                         | 2.0.04                                               | 2.0.00                              |
+  | 2.0.05                         | 2.0.04                                               | 2.0.00                              |
+  | 2.0.08                         | 2.0.04                                               | 2.0.00                              |
 
+- TDX module 2.0 versions include pre-production Connect interfaces and are currently not supported.
 - Performing TD Preserving during a TD Build operation might result in a corrupted TD hash in the TD attestation report. Until fixed in a future Intel TDX module update, a host VMM can avoid the problem by not conducting a TD Preserving Update while TD Build operation is in progress.
 - For access to the source code of the Intel TDX modules, please visit the public repository at [Intel TDX Module Source Code](https://github.com/intel/tdx-module).
 

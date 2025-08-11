@@ -1,27 +1,75 @@
 {
-	"Header": {
-		"Copyright": "Copyright (c) 2025 Intel Corporation. All rights reserved.",
-		"Info": "Info of each Intel Intel TDX module release",
-		"Version": "1.0"
-	},
-  "tdx_module_releases": [
-	{
-	  "version": "1.5.01",
-	  "min_module_version_for_td_preserving": "1.5.01",
-	  "min_seamldr_versions": ["1.5.00"],
-	  "tdx_feature0": "0xF0FBF"
-	},
-	{
-	  "version": "1.5.05",
-	  "min_module_version_for_td_preserving": "1.5.01",
-	  "min_seamldr_versions": ["1.5.00", "2.0.00"],
-	  "tdx_feature0": "0x61F0FBF"
-	},
-	{
-	  "version": "1.5.06",
-	  "min_module_version_for_td_preserving": "1.5.01",
-	  "min_seamldr_versions": ["1.5.00", "2.0.00"],
-	  "tdx_feature0": "0x2E1F0FBF"
-	}
-  ]
+  "Header": {
+	"Copyright": "Copyright (c) 2025 Intel Corporation. All rights reserved.",
+	"Info": "Info of each Intel TDX module release",
+    "Version": "1.0"
+  },
+	"tdx_module_releases": [
+		{
+			"version": "1.5.01",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00" ],
+			"tdx_feature0": "0xF0FBF"
+		},
+		{
+			"version": "1.5.05",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x61F0FBF"
+		},
+		{
+			"version": "1.5.06",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x2E1F0FBF"
+		},
+		{
+			"version": "1.5.08",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x22E1F0FBF"
+		},
+		{
+			"version": "1.5.09",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x26F1F0FBF"
+		},
+		{
+			"version": "1.5.13",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x226F1F0FBF"
+		},
+		{
+			"version": "1.5.16",
+			"min_module_version_for_td_preserving": "1.5.01",
+			"min_seamldr_versions": [ "1.5.00", "2.0.00" ],
+			"tdx_feature0": "0x226F3F0FBF"
+		},
+		{
+			"version": "2.0.02",
+			"min_module_version_for_td_preserving": "2.0.02",
+			"min_seamldr_versions": [ "2.0.00" ],
+			"tdx_feature0": "0x22E1F0FBF"
+		},
+		{
+			"version": "2.0.04",
+			"min_module_version_for_td_preserving": "2.0.04",
+			"min_seamldr_versions": [ "2.0.00" ],
+			"tdx_feature0": "0x12AF1F0FBF"
+		},
+		{
+			"version": "2.0.05",
+			"min_module_version_for_td_preserving": "2.0.04",
+			"min_seamldr_versions": [ "2.0.00" ],
+			"tdx_feature0": "0x226F3F0FBF"
+		},
+		{
+			"version": "2.0.08",
+			"min_module_version_for_td_preserving": "2.0.04",
+			"min_seamldr_versions": [ "2.0.00" ],
+			"tdx_feature0": "0x32A71F0FBF"
+		}
+	]
 }
