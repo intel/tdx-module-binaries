@@ -39,8 +39,8 @@ except ImportError:
     sys.exit(1)
 
 FIRMWARE_PATH = "/sys/class/firmware/seamldr_upload"
-MODULE_PATH = "/sys/devices/virtual/tdx/tdx_tsm"
-SEAMLDR_PATH = "/sys/devices/virtual/tdx/seamldr"
+MODULE_PATH = "/sys/devices/faux/tdx_host"
+SEAMLDR_PATH = "/sys/devices/faux/tdx_host/seamldr"
 allow_debug = False
 
 # Default directory of the module blobs
